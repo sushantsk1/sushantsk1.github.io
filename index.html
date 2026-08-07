@@ -1,418 +1,732 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WANTED: Sushant Kulkarni</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Special+Elite&family=Rokkitt:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --ink: #2b1c10; 
-            --paper: #e4d5b7; 
-            --paper-dark: #cba876;
-            --bg-wood: #1a110a;
-            --font-title: 'Rye', serif;
-            --font-body: 'Rokkitt', serif;
-            --font-typewriter: 'Special Elite', monospace;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sushant Kulkarni - AI Engineer & Backend Developer specializing in production LLM applications, RAG pipelines, Autonomous AI Agents, LoRA fine-tuning, NestJS, FastAPI, and AWS serverless architectures.">
+  <meta name="keywords" content="Sushant Kulkarni, AI Engineer, Backend Developer, RAG, LLM, LangChain, NestJS, Python, FastAPI, AWS, Vector DB, Microservices">
+  <meta name="author" content="Sushant Kulkarni">
+  <meta property="og:title" content="Sushant Kulkarni | AI Engineer & Backend Developer">
+  <meta property="og:description" content="Portfolio of Sushant Kulkarni featuring 3+ years of experience in production AI applications, scalable microservices, and cloud architectures.">
+  <meta property="og:type" content="website">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <title>Sushant Kulkarni | AI Engineer & Backend Developer</title>
 
-        body {
-            background-color: var(--bg-wood);
-            background-image: 
-                radial-gradient(circle at 50% 50%, rgba(0,0,0,0.4), var(--bg-wood)),
-                repeating-linear-gradient(to right, #1f140c, #1f140c 2px, #1a110a 2px, #1a110a 4px);
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: clamp(1rem, 4vw, 3rem);
-            color: var(--ink);
-            font-family: var(--font-body);
-            overflow-x: hidden;
-        }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-        /* --- Main Poster Canvas --- */
-        .poster-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            background-color: var(--paper);
-            padding: clamp(1.5rem, 5vw, 4rem);
-            box-shadow: 
-                0 20px 50px rgba(0,0,0,0.9),
-                inset 0 0 120px rgba(139, 69, 19, 0.4);
-            border-radius: 3px;
-            z-index: 1;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+  <!-- FontAwesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        /* Paper Texture */
-        .poster-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
-                radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px),
-                radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
-            background-size: 4px 4px;
-            background-position: 0 0, 2px 2px;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .poster-border {
-            border: clamp(4px, 1vw, 8px) solid var(--ink);
-            padding: clamp(1rem, 3vw, 2rem);
-            outline: 2px solid var(--ink);
-            outline-offset: clamp(3px, 0.8vw, 6px);
-            position: relative;
-            z-index: 5;
-        }
-
-        /* --- Scroll Animation Classes --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- Typography --- */
-        .header-section {
-            text-align: center;
-            border-bottom: 4px solid var(--ink);
-            padding-bottom: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .reward-text {
-            font-family: var(--font-typewriter);
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-        }
-
-        /* The Stamp Animation */
-        h1 {
-            font-family: var(--font-title);
-            font-size: clamp(4rem, 12vw, 9rem);
-            line-height: 0.9;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
-            animation: stampDown 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-            opacity: 0;
-            transform: scale(2) rotate(-5deg);
-        }
-
-        @keyframes stampDown {
-            0% { opacity: 0; transform: scale(2) rotate(-5deg); }
-            50% { opacity: 1; transform: scale(0.95) rotate(1deg); }
-            100% { opacity: 1; transform: scale(1) rotate(0deg); }
-        }
-
-        h2 {
-            font-family: var(--font-title);
-            font-size: clamp(1.8rem, 4vw, 2.2rem);
-            text-align: center;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px dashed var(--ink);
-            padding-bottom: 0.5rem;
-        }
-
-        h3 {
-            font-family: var(--font-body);
-            font-size: clamp(1.4rem, 3vw, 1.8rem);
-            font-weight: 900;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-        }
-
-        p {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-
-        /* --- Interactive Mugshot --- */
-        .mugshot-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 3rem;
-            cursor: crosshair;
-        }
-
-        .mugshot-frame {
-            width: clamp(200px, 40vw, 250px);
-            height: clamp(250px, 50vw, 300px);
-            border: 6px solid var(--ink);
-            background-color: var(--paper-dark);
-            position: relative;
-            box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3);
-            margin-bottom: 1rem;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        /* Photo styling to make it look printed/vintage */
-        .profile-photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%) sepia(40%) contrast(150%) brightness(90%);
-            mix-blend-mode: multiply; /* Blends the image with the paper background */
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .mugshot-frame:hover {
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.2), 0 15px 30px rgba(0,0,0,0.5);
-            border-color: #1a110a;
-        }
-
-        .mugshot-frame:hover .profile-photo {
-            transform: scale(1.1) rotate(2deg);
-            filter: grayscale(60%) sepia(20%) contrast(120%) brightness(100%);
-        }
-
-        .mugshot-text {
-            font-family: var(--font-typewriter);
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            font-weight: bold;
-            text-align: center;
-            border-top: 2px solid var(--ink);
-            border-bottom: 2px solid var(--ink);
-            padding: 0.5rem 2rem;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .mugshot-container:hover .mugshot-text {
-            background-color: var(--ink);
-            color: var(--paper);
-        }
-
-        /* --- Grid Layouts & Sections --- */
-        .two-col {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 2rem;
-        }
-
-        .section-box {
-            border: 3px double var(--ink);
-            padding: clamp(1rem, 3vw, 1.5rem);
-            background: rgba(0,0,0,0.03);
-            position: relative;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .section-box:hover {
-            transform: translateY(-3px);
-            background: rgba(0,0,0,0.06);
-        }
-
-        /* --- Lists & Details --- */
-        ul.crime-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul.crime-list li {
-            font-size: clamp(1.1rem, 2vw, 1.2rem);
-            margin-bottom: 0.8rem;
-            padding-left: 1.8rem;
-            position: relative;
-            transition: transform 0.2s ease, font-weight 0.2s;
-        }
-
-        ul.crime-list li:hover {
-            transform: translateX(5px);
-            font-weight: 900;
-        }
-
-        ul.crime-list li::before {
-            content: '☛';
-            position: absolute;
-            left: 0;
-            font-size: 1.5rem;
-            line-height: 1.1;
-            transition: color 0.2s;
-        }
-
-        .typewriter-text {
-            font-family: var(--font-typewriter);
-            font-size: clamp(1rem, 2vw, 1.1rem);
-            background: rgba(255,255,255,0.3);
-            padding: 1.5rem;
-            border: 1px dashed var(--ink);
-        }
-
-        /* --- Telegraph Office (Footer) --- */
-        .telegraph-office {
-            text-align: center;
-            border-top: 6px solid var(--ink);
-            padding-top: 2rem;
-            margin-top: 2rem;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: clamp(1rem, 2vw, 1.5rem);
-            margin-top: 1.5rem;
-        }
-
-        .contact-links a {
-            color: var(--ink);
-            font-family: var(--font-typewriter);
-            font-weight: bold;
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            text-decoration: none;
-            border: 2px solid transparent;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .contact-links a:hover {
-            border: 2px solid var(--ink);
-            background: var(--ink);
-            color: var(--paper);
-            transform: translateY(-2px);
-            box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
-        }
-    </style>
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="poster-wrapper">
-        <div class="poster-border">
-            
-            <header class="header-section">
-                <div class="reward-text">REWARD: HIGHLY SCALABLE LLM ARCHITECTURES</div>
-                <h1>WANTED</h1>
-                <div class="reward-text" style="font-size: clamp(1.2rem, 3vw, 1.8rem); margin-top: 1rem;">BY EVERY TECH SYNDICATE IN THE TERRITORY</div>
-            </header>
+  <!-- Background Ambient Glow & Grid -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow-orb orb-1"></div>
+  <div class="bg-glow-orb orb-2"></div>
 
-            <div class="mugshot-container reveal">
-                <div class="mugshot-frame">
-                    <img src="profile.png" alt="Sushant Kulkarni" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <span style="display: none; font-family: var(--font-typewriter); padding: 1rem; text-align: center; opacity: 0.6;">[ IMAGE NOT FOUND ]<br><br>Check images/profile.png</span>
-                </div>
-                <div class="mugshot-text">ALIAS: THE ALGORITHM OUTLAW</div>
-            </div>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        <div class="logo-badge">SK</div>
+        <span>Sushant Kulkarni</span>
+      </a>
 
-            <div class="section-box reveal" style="margin-bottom: 3rem;">
-                <h2>Modus Operandi (Profile)</h2>
-                <p><strong>DANGEROUSLY EFFICIENT.</strong> The suspect is a mastermind AI & Backend Engineer with 3+ years of experience building intelligent systems and scalable backend applications. Known to abandon rigid architectures in favor of end-to-end workflows utilizing LLMs and Node.js.</p>
-                <p>Approach with caution: They possess a profound ability to combine domains, successfully delivering 3+ AI-powered systems focused on solving real-world problems while maintaining reliable REST APIs and production-ready applications.</p>
-            </div>
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Credentials</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a href="sushant kulkarni resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-file-pdf"></i> Resume PDF
+          </a>
+        </li>
+      </ul>
 
-            <div class="two-col">
-                <div class="reveal">
-                    <h2>Criminal Record (Experience)</h2>
-                    
-                    <h3>Software Engineer - CentraLogic</h3>
-                    <p><em>Feb 2024 — Present | Pune, India</em><br>Fled the scene after designing and developing AI-powered applications using LLMs. The suspect engineered scalable backend services using Node.js and NestJS, leaving authorities stunned by their performance optimizations and reduced response times.</p>
-                    
-                    <h3>Co-Founder - Alphabee Technologies</h3>
-                    <p><em>Sep 2022 — Feb 2024 | Nashik, India</em><br>Orchestrated a massive development initiative delivering web solutions for local targets. Handled full-stack development from design to deployment, specializing in Node.js business applications.</p>
-
-                    <div class="section-box reveal" style="margin-top: 2rem;">
-                        <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Known Hangouts & Vices</h2>
-                        <p class="typewriter-text">When successfully evading capture, the suspect retreats into the mythical Norse realms of God of War. Authorities report they spend excessive time meticulously managing save files on shared Steam accounts to ensure their progress remains permanently uncorrupted.</p>
-                    </div>
-                </div>
-
-                <div class="reveal">
-                    <h2>Weapons of Choice (Skills)</h2>
-                    <ul class="crime-list">
-                        <li><strong>Backend Arsenal:</strong> Node.js, NestJS, FastAPI, REST APIs.</li>
-                        <li><strong>AI / ML:</strong> LLMs, Prompt Engineering, AI Workflows.</li>
-                        <li><strong>Cloud Operations:</strong> AWS, Cloud Computing, DevOps.</li>
-                        <li><strong>Database Mechanics:</strong> Neo4j Fundamentals.</li>
-                        <li><strong>Frontend Decoys:</strong> ReactJS.</li>
-                    </ul>
-
-                    <h2 style="margin-top: 3rem;">Bounties & Certifications</h2>
-                    <p style="font-size: 1.2rem; line-height: 1.8;">
-                        <strong>AWS Certified</strong><br>
-                        <strong>Business Intelligence Foundation</strong> (BIFPC)<br>
-                        <strong>OKR Certified:</strong> Leadership & Goal Setting<br>
-                        <strong>Bachelor of Engineering (IT):</strong> Mumbai Educational Trust (2020-2024)
-                    </p>
-                </div>
-            </div>
-
-            <footer class="telegraph-office reveal">
-                <h2>Contact the Sheriff's Office</h2>
-                <p>If you have a position open for this suspect, dispatch a telegraph immediately to the following coordinates:</p>
-                
-                <div class="contact-links">
-                    <a id="copyEmailBtn" data-email="sushantkulkarni406@gmail.com">[ TELEGRAPH: Copy Email ]</a>
-                    <a href="tel:7775062359">[ WIRE: 7775062359 ]</a>
-                    <a href="https://www.linkedin.com/in/sushantkulkarni841" target="_blank" rel="noopener noreferrer">[ DOSSIER: LinkedIn ]</a>
-                    <a href="https://sushantkulkarni.netlify.app/" target="_blank" rel="noopener noreferrer">[ EVIDENCE: Portfolio ]</a>
-                </div>
-            </footer>
-
-        </div>
+      <button class="mobile-toggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
+  </header>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            
-            // Scroll Reveal Animation
-            const revealElements = document.querySelectorAll('.reveal');
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target); 
-                    }
-                });
-            }, { root: null, threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="status-badge">
+            <span class="status-pulse"></span>
+            Available for AI & Backend Engineering Roles
+          </div>
 
-            revealElements.forEach(el => revealObserver.observe(el));
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Sushant Kulkarni</span>
+          </h1>
 
-            // Interactive "Copy Email" Button Logic
-            const emailBtn = document.getElementById('copyEmailBtn');
-            const originalText = "[ TELEGRAPH: Copy Email ]";
-            
-            emailBtn.addEventListener('click', async (e) => {
-                e.preventDefault();
-                const email = emailBtn.getAttribute('data-email');
-                try {
-                    await navigator.clipboard.writeText(email);
-                    emailBtn.textContent = "[ COPIED TO CLIPBOARD ]";
-                    emailBtn.style.backgroundColor = "var(--ink)";
-                    emailBtn.style.color = "var(--paper)";
-                    setTimeout(() => {
-                        emailBtn.textContent = originalText;
-                        emailBtn.style.backgroundColor = "transparent";
-                        emailBtn.style.color = "var(--ink)";
-                    }, 2000);
-                } catch (err) {
-                    emailBtn.textContent = "[ TELEGRAPH FAILED ]";
-                }
-            });
-        });
-    </script>
+          <div class="hero-subtitle">
+            <i class="fa-solid fa-brain" style="color: var(--accent-cyan);"></i> AI Engineer & Backend Developer
+          </div>
+
+          <p class="hero-description">
+            3+ years of experience architecting production-grade AI systems, autonomous agentic workflows, multi-stage RAG pipelines, and enterprise backend microservices scaled to handle 10,000+ complex real-time conversations.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-rocket"></i> Explore Work
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fa-solid fa-envelope"></i> Contact Me
+            </a>
+            <a href="sushant kulkarni resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <i class="fa-solid fa-download"></i> Get Resume
+            </a>
+          </div>
+
+          <!-- Hero Quick Metrics -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-number">3+</span>
+              <span class="metric-label">Years Experience</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">10k+</span>
+              <span class="metric-label">Conversations</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">96%</span>
+              <span class="metric-label">LLM Fine-Tune Accuracy</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">99.9%</span>
+              <span class="metric-label">System Availability</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Profile Image Display -->
+        <div class="hero-image-wrapper reveal">
+          <div class="profile-card">
+            <div class="profile-img-inner">
+              <img src="profile.png" alt="Sushant Kulkarni" class="profile-img">
+            </div>
+
+            <!-- Floating Tech Badge Overlay -->
+            <div class="floating-tag tag-1">
+              <i class="fa-solid fa-microchip" style="color: var(--accent-cyan);"></i> LLMs & RAG
+            </div>
+            <div class="floating-tag tag-2">
+              <i class="fa-solid fa-server" style="color: var(--accent-blue);"></i> NestJS & FastAPI
+            </div>
+            <div class="floating-tag tag-3">
+              <i class="fa-brands fa-aws" style="color: var(--accent-amber);"></i> AWS Serverless
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-tag">[ 01. ABOUT ME ]</div>
+        <h2 class="section-title">Architecting Next-Gen AI & High-Performance Systems</h2>
+        <p class="section-subtitle">
+          Combining deep machine learning orchestration with high-throughput backend infrastructure.
+        </p>
+
+        <div class="about-grid">
+          <div class="glass-card reveal">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1.2rem; color: var(--accent-cyan);">
+              <i class="fa-solid fa-user-gear"></i> Professional Summary
+            </h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7;">
+              <strong>AI Engineer & Backend Developer</strong> with 3+ years of experience building production-grade AI applications and scalable backend systems using Node.js, NestJS, Python, and AWS.
+            </p>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.7;">
+              Experienced in designing LLM-powered solutions, RAG pipelines, AI agents, and multimodal workflows while developing high-performance REST APIs, microservices, and cloud-native architectures. Strong expertise in system design, backend optimization, database design, and deploying secure, scalable applications for enterprise environments.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem;">
+              <span class="tech-chip"><i class="fa-solid fa-location-dot"></i> Pune, India</span>
+              <span class="tech-chip"><i class="fa-solid fa-certificate"></i> AWS Certified Practitioner</span>
+              <span class="tech-chip"><i class="fa-solid fa-graduation-cap"></i> B.E. IT (GPA 8.88/10)</span>
+            </div>
+          </div>
+
+          <div class="about-highlights reveal">
+            <div class="highlight-box">
+              <div class="highlight-icon"><i class="fa-solid fa-robot"></i></div>
+              <h4 class="highlight-title">AI Agents & RAG</h4>
+              <p class="highlight-desc">Multi-agent workflows, vector search (Pinecone, ChromaDB), and function calling via LangChain & LangGraph.</p>
+            </div>
+
+            <div class="highlight-box">
+              <div class="highlight-icon"><i class="fa-solid fa-network-wired"></i></div>
+              <h4 class="highlight-title">Scalable Backend</h4>
+              <p class="highlight-desc">Event-driven microservices built on NestJS, FastAPI, WebSockets, Kafka, and Redis caching.</p>
+            </div>
+
+            <div class="highlight-box">
+              <div class="highlight-icon"><i class="fa-solid fa-sliders"></i></div>
+              <h4 class="highlight-title">LoRA Fine-Tuning</h4>
+              <p class="highlight-desc">Specializing domain-specific open-source LLMs & Whisper models to 96% clinical extraction precision.</p>
+            </div>
+
+            <div class="highlight-box">
+              <div class="highlight-icon"><i class="fa-solid fa-cloud"></i></div>
+              <h4 class="highlight-title">AWS & Observability</h4>
+              <p class="highlight-desc">Serverless Lambda, API Gateway, SQS queues, and end-to-end tracing with LangSmith.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <div class="section-tag">[ 02. TECHNICAL SKILLS ]</div>
+        <h2 class="section-title">Core Engineering Stack</h2>
+        <p class="section-subtitle">A comprehensive toolkit spanning Artificial Intelligence, System Architecture, and Cloud Infrastructure.</p>
+
+        <!-- Skill Filter Tabs -->
+        <div class="skills-tabs reveal">
+          <button class="tab-btn active" data-filter="all">All Stack</button>
+          <button class="tab-btn" data-filter="ai">AI & Machine Learning</button>
+          <button class="tab-btn" data-filter="backend">Backend & Architecture</button>
+          <button class="tab-btn" data-filter="languages">Languages & Frontend</button>
+          <button class="tab-btn" data-filter="cloud">Cloud & Databases</button>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Skill Card 1: AI & ML -->
+          <div class="glass-card skill-card skill-card-item reveal" data-category="ai">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
+              <h3 class="skill-title">LLMs & Generative AI</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.2rem;">
+              Large Language Models (GPT-5, Azure OpenAI, Claude, Llama), AI Agents, Prompt Engineering, Prompt Chaining, Function Calling.
+            </p>
+            <div class="skill-tags">
+              <span class="tech-chip">GPT-5 / GPT-4o</span>
+              <span class="tech-chip">Azure OpenAI</span>
+              <span class="tech-chip">Claude</span>
+              <span class="tech-chip">Llama</span>
+              <span class="tech-chip">AI Agents</span>
+              <span class="tech-chip">Generative AI</span>
+              <span class="tech-chip">Prompt Engineering</span>
+              <span class="tech-chip">Prompt Chaining</span>
+              <span class="tech-chip">Function Calling</span>
+              <span class="tech-chip">MCP Protocol</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 2: RAG & Vector DBs -->
+          <div class="glass-card skill-card skill-card-item reveal" data-category="ai">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+              <h3 class="skill-title">RAG & Vector Search</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.2rem;">
+              Retrieval-Augmented Generation (RAG), Semantic Search, Natural Language Processing (NLP), Graph & Vector Databases.
+            </p>
+            <div class="skill-tags">
+              <span class="tech-chip">RAG Pipelines</span>
+              <span class="tech-chip">ChromaDB</span>
+              <span class="tech-chip">Weaviate</span>
+              <span class="tech-chip">Pinecone</span>
+              <span class="tech-chip">Neo4j Graph DB</span>
+              <span class="tech-chip">LangChain</span>
+              <span class="tech-chip">LangGraph</span>
+              <span class="tech-chip">Semantic Search</span>
+              <span class="tech-chip">NLP</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 3: Frameworks, Fine-Tuning & Evaluation -->
+          <div class="glass-card skill-card skill-card-item reveal" data-category="ai">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+              <h3 class="skill-title">ML Frameworks & Multimodal</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.2rem;">
+              Multimodal AI workflows, LLM Evaluation Frameworks, fine-tuning techniques, and ML libraries.
+            </p>
+            <div class="skill-tags">
+              <span class="tech-chip">Multimodal AI</span>
+              <span class="tech-chip">TensorFlow</span>
+              <span class="tech-chip">Scikit-learn</span>
+              <span class="tech-chip">LLM Evaluation</span>
+              <span class="tech-chip">n8n Automation</span>
+              <span class="tech-chip">LoRA Fine-Tuning</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 4: Backend Microservices -->
+          <div class="glass-card skill-card skill-card-item reveal" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+              <h3 class="skill-title">Backend & Microservices</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.2rem;">
+              Designing high-performance REST APIs, event-driven architectures, webhooks, and microservices.
+            </p>
+            <div class="skill-tags">
+              <span class="tech-chip">Node.js</span>
+              <span class="tech-chip">Nest.js</span>
+              <span class="tech-chip">Express.js</span>
+              <span class="tech-chip">FastAPI</span>
+              <span class="tech-chip">Microservices</span>
+              <span class="tech-chip">REST APIs</span>
+              <span class="tech-chip">GraphQL</span>
+              <span class="tech-chip">OpenSearch</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 5: Streaming, Caching & Queues -->
+          <div class="glass-card skill-card skill-card-item reveal" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fa-solid fa-bolt"></i></div>
+              <h3 class="skill-title">Streaming & Caching</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.2rem;">
+              WebSocket real-time communication, Kafka event streaming, Redis caching, and Webhooks.
+            </p>
+            <div class="skill-tags">
+              <span class="tech-chip">WebSocket</span>
+              <span class="tech-chip">Kafka</span>
+              <span class="tech-chip">Redis</span>
+              <span class="tech-chip">Prisma ORM</span>
+              <span class="tech-chip">Webhooks</span>
+              <span class="tech-chip">Git</span>
+              <span class="tech-chip">Docker</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 6: Languages & Frontend -->
+          <div class="glass-card skill-card skill-card-item reveal" data-category="languages">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+              <h3 class="skill-title">Languages & Frontend</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.2rem;">
+              Core programming languages and modern React frontend engineering.
+            </p>
+            <div class="skill-tags">
+              <span class="tech-chip">Python</span>
+              <span class="tech-chip">TypeScript</span>
+              <span class="tech-chip">JavaScript</span>
+              <span class="tech-chip">React</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 7: Cloud & DevOps -->
+          <div class="glass-card skill-card skill-card-item reveal" data-category="cloud">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fa-brands fa-aws"></i></div>
+              <h3 class="skill-title">Cloud & DevOps</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.2rem;">
+              AWS and Azure cloud infrastructure management, serverless deployment, and Jira project tracking.
+            </p>
+            <div class="skill-tags">
+              <span class="tech-chip">AWS (EC2, S3, RDS)</span>
+              <span class="tech-chip">AWS Lambda</span>
+              <span class="tech-chip">API Gateway</span>
+              <span class="tech-chip">IAM / CloudWatch</span>
+              <span class="tech-chip">Azure (App Services, SQL, Blob)</span>
+              <span class="tech-chip">Docker</span>
+              <span class="tech-chip">Jira</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 8: Databases -->
+          <div class="glass-card skill-card skill-card-item reveal" data-category="cloud">
+            <div class="skill-header">
+              <div class="skill-icon"><i class="fa-solid fa-cubes"></i></div>
+              <h3 class="skill-title">Databases</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.2rem;">
+              Relational and NoSQL database management systems.
+            </p>
+            <div class="skill-tags">
+              <span class="tech-chip">PostgreSQL</span>
+              <span class="tech-chip">DynamoDB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+      <div class="container">
+        <div class="section-tag">[ 03. CAREER TRAJECTORY ]</div>
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">Proven track record of driving AI innovation and technical team leadership.</p>
+
+        <div class="timeline">
+          <!-- Item 1: Centralogic -->
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="experience-header">
+                <div>
+                  <h3 class="role-title">Software Engineer | Team Lead</h3>
+                  <div class="company-name"><i class="fa-solid fa-building"></i> Centralogic Consultancy Pvt Ltd</div>
+                </div>
+                <div class="experience-date">Feb 2024 – Present | Pune, India</div>
+              </div>
+
+              <ul class="experience-bullets">
+                <li>
+                  Architected and deployed <span class="highlight-stat">3+ production-grade intelligent applications</span> using NestJS, Python, and AWS serverless primitives, scaling backend microservices to process <span class="highlight-stat">10,000+ complex healthcare conversations</span>.
+                </li>
+                <li>
+                  Led <span class="highlight-stat">0-to-1 system architecture</span> and project execution for 2 core initiatives, directing PostgreSQL database design, REST API orchestration, and cloud infrastructure from concept to launch.
+                </li>
+                <li>
+                  Implemented <span class="highlight-stat">LoRA fine-tuning on open-source LLMs</span> for specialized medical data parsing, substantially improving domain accuracy from <span class="highlight-stat">89% to 96%</span> for clinical entity extraction.
+                </li>
+                <li>
+                  Engineered multi-stage RAG pipelines and autonomous agentic workflows featuring dynamic tool-use and function calling powered by LangChain, LlamaIndex, Pinecone, and ChromaDB.
+                </li>
+                <li>
+                  Developed a low-latency AI interview agent using WebSockets, Node.js event-driven architecture, and streaming APIs across Anthropic Claude, OpenAI GPT-4o, and Mistral models.
+                </li>
+                <li>
+                  Integrated computer vision pipelines for live candidate proctoring, leveraging OpenCV and InsightFace for real-time face detection, facial verification and multi-face tracking with <span class="highlight-stat">more than 90% accuracy</span>.
+                </li>
+                <li>
+                  Enforced structured payload validation using <span class="highlight-stat">Pydantic</span> and established dynamic, cost-aware model routing to optimize token usage and minimize API overhead expenses.
+                </li>
+                <li>
+                  Integrated <span class="highlight-stat">LangSmith for end-to-end LLM observability</span>, distributed tracing, and prompt evaluation, systematically tracking performance bottlenecks and eliminating output drift.
+                </li>
+                <li>
+                  Automated end-to-end healthcare intake workflows, reducing manual processing effort by <span class="highlight-stat">~80%</span> through structured parsing, Redis caching, and SQS queue management.
+                </li>
+                <li>
+                  Built candidate onboarding application in Next.js, cutting verification turnaround time from <span class="highlight-stat">~1 hour to ~20 minutes</span>.
+                </li>
+                <li>
+                  Containerized backend services using Docker, AWS Lambda, API Gateway, and S3, maintaining <span class="highlight-stat">99.9% system availability</span>.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Item 2: Alphabee Technologies -->
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="experience-header">
+                <div>
+                  <h3 class="role-title">Co-Founder & Web Developer</h3>
+                  <div class="company-name"><i class="fa-solid fa-briefcase"></i> Alphabee Technologies Pvt Ltd</div>
+                </div>
+                <div class="experience-date">Aug 2023 – Feb 2024 | Nashik, India</div>
+              </div>
+
+              <ul class="experience-bullets">
+                <li>
+                  Co-founded and built a client-facing development initiative delivering custom web and backend solutions across multiple business domains.
+                </li>
+                <li>
+                  Designed and developed end-to-end applications, managing system architecture, database design, backend services, and cloud deployment.
+                </li>
+                <li>
+                  Built scalable backend systems and REST APIs using Node.js tailored for high reliability in real-world commercial environments.
+                </li>
+                <li>
+                  Collaborated directly with client leadership to translate complex business requirements into clean, scalable software architecture.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-tag">[ 04. FEATURED WORK ]</div>
+        <h2 class="section-title">Key Engineering Projects</h2>
+        <p class="section-subtitle">Production platforms showcasing AI agent workflows, fine-tuning, and robust microservices.</p>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="glass-card project-card reveal">
+            <div class="project-badge">FULL-STACK & BACKEND ARCHITECTURE</div>
+            <h3 class="project-title">Agent Onboarding System</h3>
+            <p class="project-desc">
+              Architected a production-grade full-stack platform using NestJS and React.js, automating onboarding for 5,000+ agents.
+            </p>
+
+            <ul class="project-highlights">
+              <li>Reduced end-to-end processing time by <strong>66% (60 → 20 minutes)</strong> by engineering automated validation pipelines and streamlined approval workflows.</li>
+              <li>Engineered scalable backend services using Prisma ORM, PostgreSQL, and Kafka optimizing schemas and queries for high-performance data retrieval.</li>
+              <li>Secured platform with Okta, JWT-based authentication, and Role-Based Access Control (RBAC) for multi-level authorization.</li>
+              <li>Improved reliability using Redis for distributed caching & session management, maintaining sub-second API response times under concurrent load.</li>
+              <li>Designed modular backend services using Object-Oriented Design and wrote Jest unit tests achieving <strong>90%+ test coverage</strong>.</li>
+            </ul>
+
+            <div class="project-footer">
+              <div class="skill-tags">
+                <span class="tech-chip">Nest.js</span>
+                <span class="tech-chip">React</span>
+                <span class="tech-chip">PostgreSQL</span>
+                <span class="tech-chip">AWS</span>
+                <span class="tech-chip">Kafka</span>
+                <span class="tech-chip">Redis</span>
+                <span class="tech-chip">Okta</span>
+                <span class="tech-chip">Prisma ORM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="glass-card project-card reveal">
+            <div class="project-badge">MULTIMODAL AI & AGENTIC WORKFLOWS</div>
+            <h3 class="project-title">Interview Agent</h3>
+            <p class="project-desc">
+              Architected an AI-powered interview agent using Mistral, LLaMA, and GPT-4, enabling dynamic, context-aware conversations for technical role assessments.
+            </p>
+
+            <ul class="project-highlights">
+              <li>Engineered a multi-model orchestration pipeline to optimize response latency & cost-efficiency across <strong>1,200+ live interviews</strong>.</li>
+              <li>Developed a high-performance backend using Python and FastAPI to manage conversation state, prompt chaining, and real-time streaming responses.</li>
+              <li>Integrated multimodal stack with Whisper (large-v3) for STT, Deepgram for low-latency TTS, and InsightFace for real-time biometric proctoring.</li>
+              <li>Built vision-based AI workflows for automated resume evaluation & candidate scoring, triggering interview pipelines based on profile analysis.</li>
+              <li>Orchestrated event-driven workflows for scheduling, evaluation scoring, and automated candidate feedback notifications.</li>
+            </ul>
+
+            <div class="project-footer">
+              <div class="skill-tags">
+                <span class="tech-chip">Python</span>
+                <span class="tech-chip">FastAPI</span>
+                <span class="tech-chip">RAG</span>
+                <span class="tech-chip">LLM</span>
+                <span class="tech-chip">Multimodal Processing</span>
+                <span class="tech-chip">Node.js</span>
+                <span class="tech-chip">CosmosDB</span>
+                <span class="tech-chip">Azure</span>
+                <span class="tech-chip">Whisper</span>
+                <span class="tech-chip">Deepgram</span>
+                <span class="tech-chip">InsightFace</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="glass-card project-card reveal">
+            <div class="project-badge">LLM FINE-TUNING & HEALTHCARE AI</div>
+            <h3 class="project-title">Scribing AI</h3>
+            <p class="project-desc">
+              Developed an AI-powered medical scribe platform, building LLM pipelines and backend services using Python, FastAPI, Node.js, Express.js, and PostgreSQL to transcribe doctor–patient conversations and generate structured clinical summaries.
+            </p>
+
+            <ul class="project-highlights">
+              <li>Built end-to-end pipelines to extract medical findings and generate SOAP (Subjective, Objective, Assessment, Plan) notes for physicians.</li>
+              <li>Processed <strong>10,000+ healthcare conversations</strong> with <strong>~96% accuracy</strong> in extracting clinically relevant insights.</li>
+              <li>Fine-tuned Whisper models with <strong>400K+ trainable parameters using LoRA</strong>.</li>
+              <li>Engineered scalable APIs, transcript-processing workflows, database integrations, and real-time report generation pipelines.</li>
+              <li>Reduced manual documentation effort by automating clinical note generation and standardizing reporting workflows.</li>
+            </ul>
+
+            <div class="project-footer">
+              <div class="skill-tags">
+                <span class="tech-chip">Python</span>
+                <span class="tech-chip">FastAPI</span>
+                <span class="tech-chip">LLMs</span>
+                <span class="tech-chip">Speech-to-Text (STT)</span>
+                <span class="tech-chip">Prompt Engineering</span>
+                <span class="tech-chip">REST APIs</span>
+                <span class="tech-chip">PostgreSQL</span>
+                <span class="tech-chip">Fine-tuning (LoRA)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="certifications" class="certifications">
+      <div class="container">
+        <div class="section-tag">[ 05. CREDENTIALS ]</div>
+        <h2 class="section-title">Education & Certifications</h2>
+        <p class="section-subtitle">Academic foundations and verified cloud engineering credentials.</p>
+
+        <div class="edu-cert-grid">
+          <!-- Certification Card -->
+          <div class="glass-card cert-card reveal">
+            <div class="cert-badge-icon">
+              <i class="fa-brands fa-aws"></i>
+            </div>
+            <div class="cert-info">
+              <h3>AWS Certified Cloud Practitioner</h3>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.2rem;">
+                Amazon Web Services (AWS)
+              </p>
+              <div class="cert-id">Validation ID: b49df5fb1eaa46bcb6d8ca7f6b2e859e</div>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
+                <i class="fa-regular fa-calendar"></i> Issued: Apr 2026 – Valid thru: Apr 2029
+              </p>
+            </div>
+          </div>
+
+          <!-- Education Card -->
+          <div class="glass-card cert-card reveal">
+            <div class="cert-badge-icon" style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="cert-info">
+              <h3>Bachelor of Engineering - Information Technology</h3>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.2rem;">
+                MET BKC College of Engineering, Nashik, India
+              </p>
+              <div class="cert-id" style="color: var(--accent-emerald); background: rgba(16, 185, 129, 0.1);">
+                GPA: 8.88 / 10.0
+              </div>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
+                <i class="fa-regular fa-calendar"></i> Graduation: Jul 2020 – Jun 2024
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-tag">[ 06. CONNECT ]</div>
+        <h2 class="section-title">Let's Build Something Intelligent</h2>
+        <p class="section-subtitle">
+          Interested in AI Agents, RAG architecture, high-scale backends, or engineering leadership? Feel free to reach out.
+        </p>
+
+        <div class="contact-grid">
+          <!-- Direct Contact Cards -->
+          <div class="contact-card-list reveal">
+            <!-- Email -->
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <div class="contact-label">Direct Email</div>
+                <div class="contact-value">sushant.kulkarni841@gmail.com</div>
+              </div>
+              <button class="copy-btn" id="copyEmailBtn">
+                <i class="fa-regular fa-copy"></i> Copy
+              </button>
+            </div>
+
+            <!-- Phone -->
+            <a href="tel:+917775062359" class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <div class="contact-label">Phone Call / WhatsApp</div>
+                <div class="contact-value">+91 7775062359</div>
+              </div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/sushantkulkarni841" target="_blank" rel="noopener noreferrer" class="contact-item">
+              <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div>
+                <div class="contact-label">LinkedIn Profile</div>
+                <div class="contact-value">linkedin.com/in/sushantkulkarni841</div>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: auto; color: var(--text-muted); font-size: 0.85rem;"></i>
+            </a>
+
+            <!-- Location -->
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="contact-label">Current Location</div>
+                <div class="contact-value">Pune, Maharashtra, India</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Message Form -->
+          <div class="glass-card reveal">
+            <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--text-primary);">
+              Send a Direct Message
+            </h3>
+
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="senderName">Your Name</label>
+                <input type="text" id="senderName" class="form-input" placeholder="e.g. Sarah Jenkins" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderEmail">Your Email</label>
+                <input type="email" id="senderEmail" class="form-input" placeholder="e.g. sarah@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="msgSubject">Subject</label>
+                <input type="text" id="msgSubject" class="form-input" placeholder="AI Engineering Opportunity / Inquiry" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderMsg">Message</label>
+                <textarea id="senderMsg" class="form-textarea" placeholder="Hello Sushant, I'd like to discuss a project or role..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <i class="fa-solid fa-paper-plane"></i> Dispatch Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div id="toastNotification" class="toast">
+    <i class="toast-icon fa-solid fa-circle-check"></i>
+    <span class="toast-message">Action successful!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="nav-logo" style="font-size: 1.1rem;">
+        <div class="logo-badge" style="width: 32px; height: 32px; font-size: 0.9rem;">SK</div>
+        <span>Sushant Kulkarni</span>
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <p>© 2026 Sushant Kulkarni. All rights reserved. Architected with Modern Web Standards.</p>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
 </body>
 </html>
