@@ -25,7 +25,8 @@
 </head>
 <body>
 
-  <!-- Background Ambient Glow & Grid -->
+  <!-- Background Particle Canvas & Ambient Orbs -->
+  <canvas id="particleCanvas"></canvas>
   <div class="bg-grid"></div>
   <div class="bg-glow-orb orb-1"></div>
   <div class="bg-glow-orb orb-2"></div>
@@ -52,9 +53,14 @@
         </li>
       </ul>
 
-      <button class="mobile-toggle" aria-label="Toggle Navigation">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+      <div class="nav-actions">
+        <button id="audioToggleBtn" class="icon-btn" title="Toggle Sci-Fi UI Audio FX">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+        <button class="mobile-toggle" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -116,6 +122,7 @@
         <!-- Hero Profile Image Display -->
         <div class="hero-image-wrapper reveal">
           <div class="profile-card">
+            <div class="card-glare"></div>
             <div class="profile-img-inner">
               <img src="profile.png" alt="Sushant Kulkarni" class="profile-img">
             </div>
@@ -146,6 +153,7 @@
 
         <div class="about-grid">
           <div class="glass-card reveal">
+            <div class="card-glare"></div>
             <h3 style="font-size: 1.5rem; margin-bottom: 1.2rem; color: var(--accent-cyan);">
               <i class="fa-solid fa-user-gear"></i> Professional Summary
             </h3>
@@ -210,6 +218,7 @@
         <div class="skills-grid">
           <!-- Skill Card 1: AI & ML -->
           <div class="glass-card skill-card skill-card-item reveal" data-category="ai">
+            <div class="card-glare"></div>
             <div class="skill-header">
               <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
               <h3 class="skill-title">LLMs & Generative AI</h3>
@@ -233,6 +242,7 @@
 
           <!-- Skill Card 2: RAG & Vector DBs -->
           <div class="glass-card skill-card skill-card-item reveal" data-category="ai">
+            <div class="card-glare"></div>
             <div class="skill-header">
               <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
               <h3 class="skill-title">RAG & Vector Search</h3>
@@ -255,6 +265,7 @@
 
           <!-- Skill Card 3: Frameworks, Fine-Tuning & Evaluation -->
           <div class="glass-card skill-card skill-card-item reveal" data-category="ai">
+            <div class="card-glare"></div>
             <div class="skill-header">
               <div class="skill-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
               <h3 class="skill-title">ML Frameworks & Multimodal</h3>
@@ -274,6 +285,7 @@
 
           <!-- Skill Card 4: Backend Microservices -->
           <div class="glass-card skill-card skill-card-item reveal" data-category="backend">
+            <div class="card-glare"></div>
             <div class="skill-header">
               <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
               <h3 class="skill-title">Backend & Microservices</h3>
@@ -295,6 +307,7 @@
 
           <!-- Skill Card 5: Streaming, Caching & Queues -->
           <div class="glass-card skill-card skill-card-item reveal" data-category="backend">
+            <div class="card-glare"></div>
             <div class="skill-header">
               <div class="skill-icon"><i class="fa-solid fa-bolt"></i></div>
               <h3 class="skill-title">Streaming & Caching</h3>
@@ -315,6 +328,7 @@
 
           <!-- Skill Card 6: Languages & Frontend -->
           <div class="glass-card skill-card skill-card-item reveal" data-category="languages">
+            <div class="card-glare"></div>
             <div class="skill-header">
               <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
               <h3 class="skill-title">Languages & Frontend</h3>
@@ -332,6 +346,7 @@
 
           <!-- Skill Card 7: Cloud & DevOps -->
           <div class="glass-card skill-card skill-card-item reveal" data-category="cloud">
+            <div class="card-glare"></div>
             <div class="skill-header">
               <div class="skill-icon"><i class="fa-brands fa-aws"></i></div>
               <h3 class="skill-title">Cloud & DevOps</h3>
@@ -352,6 +367,7 @@
 
           <!-- Skill Card 8: Databases -->
           <div class="glass-card skill-card skill-card-item reveal" data-category="cloud">
+            <div class="card-glare"></div>
             <div class="skill-header">
               <div class="skill-icon"><i class="fa-solid fa-cubes"></i></div>
               <h3 class="skill-title">Databases</h3>
@@ -379,7 +395,8 @@
           <!-- Item 1: Centralogic -->
           <div class="timeline-item reveal">
             <div class="timeline-dot"></div>
-            <div class="timeline-content">
+            <div class="timeline-content glass-card">
+              <div class="card-glare"></div>
               <div class="experience-header">
                 <div>
                   <h3 class="role-title">Software Engineer | Team Lead</h3>
@@ -429,7 +446,8 @@
           <!-- Item 2: Alphabee Technologies -->
           <div class="timeline-item reveal">
             <div class="timeline-dot"></div>
-            <div class="timeline-content">
+            <div class="timeline-content glass-card">
+              <div class="card-glare"></div>
               <div class="experience-header">
                 <div>
                   <h3 class="role-title">Co-Founder & Web Developer</h3>
@@ -468,6 +486,7 @@
         <div class="projects-grid">
           <!-- Project 1 -->
           <div class="glass-card project-card reveal">
+            <div class="card-glare"></div>
             <div class="project-badge">FULL-STACK & BACKEND ARCHITECTURE</div>
             <h3 class="project-title">Agent Onboarding System</h3>
             <p class="project-desc">
@@ -498,6 +517,7 @@
 
           <!-- Project 2 -->
           <div class="glass-card project-card reveal">
+            <div class="card-glare"></div>
             <div class="project-badge">MULTIMODAL AI & AGENTIC WORKFLOWS</div>
             <h3 class="project-title">Interview Agent</h3>
             <p class="project-desc">
@@ -531,6 +551,7 @@
 
           <!-- Project 3 -->
           <div class="glass-card project-card reveal">
+            <div class="card-glare"></div>
             <div class="project-badge">LLM FINE-TUNING & HEALTHCARE AI</div>
             <h3 class="project-title">Scribing AI</h3>
             <p class="project-desc">
@@ -572,6 +593,7 @@
         <div class="edu-cert-grid">
           <!-- Certification Card -->
           <div class="glass-card cert-card reveal">
+            <div class="card-glare"></div>
             <div class="cert-badge-icon">
               <i class="fa-brands fa-aws"></i>
             </div>
@@ -589,6 +611,7 @@
 
           <!-- Education Card -->
           <div class="glass-card cert-card reveal">
+            <div class="card-glare"></div>
             <div class="cert-badge-icon" style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);">
               <i class="fa-solid fa-graduation-cap"></i>
             </div>
@@ -664,6 +687,7 @@
 
           <!-- Quick Message Form -->
           <div class="glass-card reveal">
+            <div class="card-glare"></div>
             <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--text-primary);">
               Send a Direct Message
             </h3>
@@ -705,6 +729,47 @@
     <span class="toast-message">Action successful!</span>
   </div>
 
+  <!-- FLOATING AI CHATBOT WIDGET -->
+  <button id="aiWidgetTrigger" class="ai-widget-trigger" title="Ask Sushant AI Assistant">
+    <i class="fa-solid fa-robot"></i>
+  </button>
+
+  <div id="aiModal" class="ai-modal">
+    <div class="ai-modal-header">
+      <div class="ai-header-info">
+        <div class="ai-avatar"><i class="fa-solid fa-brain"></i></div>
+        <div>
+          <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-primary);">Sushant AI Assistant</div>
+          <div style="font-size: 0.75rem; color: var(--accent-emerald);">● Online | Knowledge Base Active</div>
+        </div>
+      </div>
+      <button id="closeAiModal" class="icon-btn" style="width: 28px; height: 28px; font-size: 0.8rem;">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div id="chatBody" class="ai-body">
+      <div class="chat-msg bot">
+        <div class="msg-bubble">
+          👋 Hi! I am Sushant's AI Assistant. Ask me anything about his AI architecture, RAG pipelines, LoRA fine-tuning, or backend engineering scale!
+        </div>
+        <div class="preset-prompts">
+          <button class="prompt-chip" data-prompt="What is Sushant's experience with RAG and LLMs?">RAG & LLM Exp</button>
+          <button class="prompt-chip" data-prompt="Tell me about his medical LLM fine-tuning precision.">Medical LoRA</button>
+          <button class="prompt-chip" data-prompt="What backend frameworks does he use for high concurrency?">Backend Stack</button>
+          <button class="prompt-chip" data-prompt="Why should we hire Sushant for AI & Backend engineering?">Why Hire Sushant?</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ai-input-box">
+      <input type="text" id="chatInput" class="ai-input" placeholder="Ask a question about Sushant's resume..." autocomplete="off">
+      <button id="sendChatBtn" class="btn btn-primary btn-sm" style="padding: 0.5rem 0.9rem;">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer>
     <div class="container footer-content">
@@ -722,7 +787,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
 
-      <p>© 2026 Sushant Kulkarni. All rights reserved. Architected with Modern Web Standards.</p>
+      <p>© 2026 Sushant Kulkarni. All rights reserved. Architected with Modern Web Standards & AI Engine.</p>
     </div>
   </footer>
 
