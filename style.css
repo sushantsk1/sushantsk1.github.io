@@ -78,17 +78,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Background Particle Canvas & Grid */
-#particleCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: -1;
-}
-
+/* Background Ambient Glow & Grid */
 .bg-grid {
   position: fixed;
   top: 0;
@@ -96,8 +86,8 @@ body {
   width: 100vw;
   height: 100vh;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
   z-index: -2;
@@ -106,33 +96,26 @@ body {
 .bg-glow-orb {
   position: fixed;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(140px);
   pointer-events: none;
   z-index: -1;
   opacity: 0.35;
-  animation: orbFloat 18s ease-in-out infinite alternate;
 }
 
 .orb-1 {
   top: -10%;
   left: -10%;
-  width: 500px;
-  height: 500px;
+  width: 550px;
+  height: 550px;
   background: rgba(0, 242, 254, 0.25);
 }
 
 .orb-2 {
   bottom: 10%;
   right: -10%;
-  width: 600px;
-  height: 600px;
-  background: rgba(127, 83, 172, 0.2);
-}
-
-@keyframes orbFloat {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(60px, 40px) scale(1.1); }
-  100% { transform: translate(-40px, 80px) scale(0.9); }
+  width: 650px;
+  height: 650px;
+  background: rgba(79, 172, 254, 0.22);
 }
 
 /* --- Container & Grid Helpers --- */
