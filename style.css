@@ -251,6 +251,21 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
+.btn-linkedin {
+  background: rgba(10, 102, 194, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(10, 102, 194, 0.45);
+  box-shadow: 0 4px 15px rgba(10, 102, 194, 0.2);
+}
+
+.btn-linkedin:hover {
+  background: #0a66c2;
+  color: #ffffff;
+  border-color: #0a66c2;
+  box-shadow: 0 6px 25px rgba(10, 102, 194, 0.5);
+  transform: translateY(-2px);
+}
+
 .btn-sm {
   padding: 0.5rem 1.1rem;
   font-size: 0.9rem;
@@ -449,7 +464,111 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.8rem;
+}
+
+/* Hero Direct Contact Strip (Instant Reach at First Glance) */
+.hero-contact-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 1rem;
+  background: rgba(18, 26, 43, 0.75);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--text-primary);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: var(--transition-fast);
+}
+
+.hero-contact-pill:hover {
+  border-color: var(--accent-cyan);
+  background: rgba(28, 40, 65, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 242, 254, 0.15);
+}
+
+.hero-contact-pill.linkedin-pill:hover {
+  border-color: #0a66c2;
+  box-shadow: 0 6px 20px rgba(10, 102, 194, 0.3);
+}
+
+.pill-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.email-icon {
+  background: rgba(0, 242, 254, 0.12);
+  color: var(--accent-cyan);
+}
+
+.phone-icon {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--accent-emerald);
+}
+
+.linkedin-icon {
+  background: rgba(10, 102, 194, 0.2);
+  color: #38bdf8;
+}
+
+.loc-icon {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--accent-amber);
+}
+
+.pill-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.pill-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.pill-val {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+}
+
+.hero-contact-pill:hover .pill-val {
+  color: var(--text-primary);
+}
+
+.pill-ext {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: 0.25rem;
+  transition: var(--transition-fast);
+}
+
+.hero-contact-pill:hover .pill-ext {
+  color: var(--accent-cyan);
+  transform: translate(2px, -2px);
 }
 
 /* Metrics Counter Grid */
@@ -1417,7 +1536,12 @@ footer {
 
   .hero-description {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-contact-strip {
+    justify-content: center;
+    gap: 0.65rem;
   }
 
   .profile-card {
@@ -1532,6 +1656,23 @@ footer {
   .hero-actions .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .hero-contact-strip {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.65rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-contact-pill {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .hero-contact-pill .pill-val {
+    word-break: break-all;
+    font-size: 0.82rem;
   }
 
   .hero-metrics {
